@@ -6,8 +6,7 @@ def scores(row,df,phi):
     phi.loc[row.name]=df.sum(axis=1).T.values
 
 def promethee(df):
-    n=np.shape(df)[0]
-    m=np.shape(df)[1]
+
     col=df['Company']
     df2=df.drop('Company',axis=1)
     df2=df2.set_index(col)

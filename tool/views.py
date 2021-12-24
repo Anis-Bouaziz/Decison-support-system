@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django_plotly_dash import DjangoDash
-import dash_table
+from dash import dash_table
 import dash_bootstrap_components as dbc
 from tool.methods.WSM import WSM
 from tool.methods.Entropy import entropy
@@ -9,8 +9,8 @@ from tool.methods.topsis import topsis
 import pandas as pd
 import plotly.express as px
 from tool.methods.waspass import waspass
-import dash_html_components as html
-import dash_core_components as dcc
+from dash import html
+from dash import dcc
 
 
 df = pd.read_csv('tool/data/data.csv')
@@ -438,6 +438,7 @@ def prometheeMethod(request):
         },
         page_size=20
     )
+    del w
     ##########################################################
     app = DjangoDash('wnorm', external_stylesheets=[dbc.themes.BOOTSTRAP])
     app.layout = dash_table.DataTable(
@@ -454,7 +455,8 @@ def prometheeMethod(request):
             'color': 'white'
         },
         page_size=10
-    )
+    ) 
+    del wnorm
     #############################################################
     ##########################################################
     app = DjangoDash('phi', external_stylesheets=[dbc.themes.BOOTSTRAP])
@@ -473,5 +475,6 @@ def prometheeMethod(request):
         },
         page_size=10
     )
+    del phi
     #############################################################
     return render(request, 'tool/promethee.html', {'top1': top1})
