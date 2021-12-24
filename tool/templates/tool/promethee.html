@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+{% load static %}
+{%load plotly_dash%}
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>WSM</title>
+
+    <!-- Fontfaces CSS-->
+    <link href="{% static 'tool/css/font-face.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'tool/vendor/font-awesome-4.7/css/font-awesome.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'tool/vendor/font-awesome-5/css/fontawesome-all.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'tool/vendor/mdi-font/css/material-design-iconic-font.min.css' %}" rel="stylesheet"
+        media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="{% static 'tool/vendor/bootstrap-4.1/bootstrap.min.css' %}" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="{% static 'tool/vendor/animsition/animsition.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'tool/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css' %}" rel="stylesheet"
+        media="all">
+    <link href="{% static 'tool/vendor/wow/animate.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'tool/vendor/css-hamburgers/hamburgers.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'tool/vendor/slick/slick.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'tool/vendor/select2/select2.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'tool/vendor/perfect-scrollbar/perfect-scrollbar.css' %}" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="{% static 'tool/css/theme.css' %}" rel="stylesheet" media="all">
+
+</head>
+
+<body class="animsition">
+    <div class="page-wrapper">
+        <!-- HEADER MOBILE-->
+       
+        <!-- END HEADER MOBILE-->
+
+        <!-- MENU SIDEBAR-->
+        <aside class="menu-sidebar d-none d-lg-block">
+            <div class="logo">
+                <a href="#">
+                    <img src="{% static 'tool/images/icon/post.jpg' %}" alt="post" style="width: 100%;" />
+                </a>
+            </div>
+            <div class="menu-sidebar__content js-scrollbar1">
+                <nav class="navbar-sidebar">
+                    <ul class="list-unstyled navbar__list">
+                        <li>
+                            <a href="/">
+                                <i class="fas fa-tachometer-alt"></i>Home</a>
+                        </li>
+                        <li>
+                            <a href="/charts">
+                                <i class="fas fa-chart-bar"></i>Charts</a>
+                        </li>
+
+
+
+
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-copy"></i>Methods</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+
+                                <li>
+                                    <a href="/wsm">Weighted Sum</a>
+                                </li>
+                                <li>
+                                    <a href="/entropy">Entropy</a>
+                                </li>
+
+                                <li>
+                                    <a href="/topsis">Topsis</a>
+                                </li>
+                                <li>
+                                    <a href="/waspass">WASPASS</a>
+                                </li>
+                                <li>
+                                    <a href="/promethee">Promethee I</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <!-- END MENU SIDEBAR-->
+
+        <!-- PAGE CONTAINER-->
+        <div class="page-container">
+            <!-- HEADER DESKTOP-->
+            <header class="header-desktop">
+
+
+  
+                <div class="row">
+                    <h3 class="col-lg-6" style="text-align: center; padding-top: 1%;"> Promethee I Method</h3>
+    
+                    <div class="col-lg-6" style="text-align: right !important;">
+                        
+                        <img src="{% static 'tool/images/icon/IGM.png' %}" alt="" style="width: 250px;">
+                    </div>
+                </div>
+
+            </header>
+            <!-- END HEADER DESKTOP-->
+
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+            <div class="section__content section__content--p30">
+             <div class="text">  <h1> RANK 1: {{top1.Company.values.0}}</h1></div> 
+            <div class="row mt-25">
+                
+                <div class="col-sm-6 col-lg-3">
+                    <div class="overview-item overview-item--c1">
+                        <div class="overview__inner">
+                            <div class="overview-box clearfix">
+                                <div class="icon">
+                                    <i class="zmdi zmdi-account-o"></i>
+                                </div>
+                                
+                                <div class="text">
+                                    <h2>{{top1.values.0.1}}</h2>
+                                    <span>Sales ($billion)</span>
+                                </div>
+                            </div>
+                            <div class="overview-chart">
+                                <div class="chartjs-size-monitor"
+                                    style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+                                    <div class="chartjs-size-monitor-expand"
+                                        style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                        <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0">
+                                        </div>
+                                    </div>
+                                    <div class="chartjs-size-monitor-shrink"
+                                        style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                        <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+                                    </div>
+                                </div>
+                             
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="overview-item overview-item--c2">
+                        <div class="overview__inner">
+                            <div class="overview-box clearfix">
+                                <div class="icon">
+                                    <i class="zmdi zmdi-shopping-cart"></i>
+                                </div>
+                                <div class="text">
+                                    <h2>{{top1.values.0.2}}</h2>
+                                    <span>Profits ($billion)</span>
+                                </div>
+                            </div>
+                            <div class="overview-chart">
+                                <div class="chartjs-size-monitor"
+                                    style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+                                    <div class="chartjs-size-monitor-expand"
+                                        style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                        <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0">
+                                        </div>
+                                    </div>
+                                    <div class="chartjs-size-monitor-shrink"
+                                        style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                        <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="overview-item overview-item--c3">
+                        <div class="overview__inner">
+                            <div class="overview-box clearfix">
+                                <div class="icon">
+                                    <i class="zmdi zmdi-calendar-note"></i>
+                                </div>
+                                <div class="text">
+                                    <h2>{{top1.values.0.3}}</h2>
+                                    <span>Assets ($billion)</span>
+                                </div>
+                            </div>
+                            <div class="overview-chart">
+                                <div class="chartjs-size-monitor"
+                                    style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+                                    <div class="chartjs-size-monitor-expand"
+                                        style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                        <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0">
+                                        </div>
+                                    </div>
+                                    <div class="chartjs-size-monitor-shrink"
+                                        style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                        <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="overview-item overview-item--c4">
+                        <div class="overview__inner">
+                            <div class="overview-box clearfix">
+                                <div class="icon">
+                                    <i class="zmdi zmdi-money"></i>
+                                </div>
+                                <div class="text">
+                                    <h2>{{top1.values.0.4}}</h2>
+                                    <span>Market Value ($billion)</span>
+                                </div>
+                            </div>
+                            <div class="overview-chart">
+                                <div class="chartjs-size-monitor"
+                                    style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+                                    <div class="chartjs-size-monitor-expand"
+                                        style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                        <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0">
+                                        </div>
+                                    </div>
+                                    <div class="chartjs-size-monitor-shrink"
+                                        style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                        <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h5>Step 1 :</h5><span>Normalization<br> </span>[MAX] R_ij = (x_ij-min{j}(x_ij))/(max{j}(x_ij)-min{j}{x_ij})<br>
+            [MIN] R_ij = (max{j}(x_ij)- x_ij)/(max{j}(x_ij)-min{j}{x_ij})
+            <div class="table-responsive table--no-card m-b-30">
+                {%plotly_app name="wnorm" ratio=0.2 %}
+                
+            </div>
+            <h5>Step 2 :</h5><span>Pj(a,b) = 0 if D(Ma-DMb) < = 0
+                <br>  Pj(a,b) = D(Ma-DMb) if D(Ma-DMb) > 0  <br> Pi (a,b) = Sum(w_ij*Pj(a,b))/Sum(w_ij) <br>Pi (a,b) = Sum(w_ij*Pj(a,b))/Sum(w_ij)</span> 
+            
+            <div class="table-responsive table--no-card m-b-30">
+                {%plotly_app name="phi" ratio=0.2 %}
+                
+            </div>
+            <h5>Step 3 :</h5><span>Phi + (a) = 1/(m-1)(Sum(Pi(a,b)))<br>
+                Phi - (a) = 1/(m-1)(Sum(Pi(b,a)))<br> 
+                a is preferred to/outranks b : <br>  If Phi+(a) > Phi+(b) and Phi-(a) < Phi-(b) /
+                If Phi+(a) > Phi+(b) and Phi-(a) = Phi-(b) /
+                If Phi+(a) = Phi+(b) and Phi-(a) < Phi-(b)
+                </span>
+            <div class="table-responsive table--no-card m-b-30">
+                {%plotly_app name="promethee" ratio=0.4 %}
+            </div>
+        </div>
+    </div></div>
+    </div>
+</div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="{% static 'tool/vendor/jquery-3.2.1.min.js' %}"></script>
+    <!-- Bootstrap JS-->
+    <script src="{% static 'tool/vendor/bootstrap-4.1/popper.min.js' %}"></script>
+    <script src="{% static 'tool/vendor/bootstrap-4.1/bootstrap.min.js' %}"></script>
+    <!-- Vendor JS       -->
+    <script src="{% static 'tool/vendor/slick/slick.min.js' %}">
+    </script>
+    <script src="{% static 'tool/vendor/wow/wow.min.js' %}"></script>
+    <script src="{% static 'tool/vendor/animsition/animsition.min.js' %}"></script>
+    <script src="{% static 'tool/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js' %}">
+    </script>
+    <script src="{% static 'tool/vendor/counter-up/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'tool/vendor/counter-up/jquery.counterup.min.js' %}">
+    </script>
+    <script src="{% static 'tool/vendor/circle-progress/circle-progress.min.js' %}"></script>
+    <script src="{% static 'tool/vendor/perfect-scrollbar/perfect-scrollbar.js' %}"></script>
+    <script src="{% static 'tool/vendor/chartjs/Chart.bundle.min.js' %}"></script>
+    <script src="{% static 'tool/vendor/select2/select2.min.js' %}">
+    </script>
+
+    <!-- Main JS-->
+    <script src="{% static 'tool/js/main.js' %}"></script>
+
+</body>
+
+</html>
+<!-- end document-->

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+{% load static %}
+{%load plotly_dash%}
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>Topsis</title>
+
+    <!-- Fontfaces CSS-->
+    <link href="{% static 'tool/css/font-face.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'tool/vendor/font-awesome-4.7/css/font-awesome.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'tool/vendor/font-awesome-5/css/fontawesome-all.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'tool/vendor/mdi-font/css/material-design-iconic-font.min.css' %}" rel="stylesheet"
+        media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="{% static 'tool/vendor/bootstrap-4.1/bootstrap.min.css' %}" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="{% static 'tool/vendor/animsition/animsition.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'tool/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css' %}" rel="stylesheet"
+        media="all">
+    <link href="{% static 'tool/vendor/wow/animate.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'tool/vendor/css-hamburgers/hamburgers.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'tool/vendor/slick/slick.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'tool/vendor/select2/select2.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'tool/vendor/perfect-scrollbar/perfect-scrollbar.css' %}" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="{% static 'tool/css/theme.css' %}" rel="stylesheet" media="all">
+
+</head>
+
+<body class="animsition">
+    <div class="page-wrapper">
+        <!-- HEADER MOBILE-->
+        <header class="header-mobile d-block d-lg-none">
+            <div class="header-mobile__bar">
+                <div class="container-fluid">
+                    <div class="header-mobile-inner">
+                        <a class="logo" href="/">
+                            <img src="{% static 'tool/images/icon/logo.png' %}" alt="DSS" />
+                        </a>
+                        <button class="hamburger hamburger--slider" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar-mobile">
+                <div class="container-fluid">
+                    <ul class="navbar-mobile__list list-unstyled">
+                        <li>
+                            <a href="/">
+                                <i class="fas fa-chart-bar"></i>Home</a>
+                        </li>
+                        <li>
+                            <a href="/charts">
+                                <i class="fas fa-chart-bar"></i>Charts</a>
+                        </li>
+
+
+
+
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-copy"></i>Methods</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="/AHP">AHP</a>
+                                </li>
+                                <li>
+                                    <a href="register.html">Weighted Sum</a>
+                                </li>
+                                <li>
+                                    <a href="forget-pass.html">Topsis</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- END HEADER MOBILE-->
+
+        <!-- MENU SIDEBAR-->
+        <aside class="menu-sidebar d-none d-lg-block">
+            <div class="logo">
+                <a href="#">
+                    <img src="{% static 'tool/images/icon/post.jpg' %}" alt="post" style="width: 100%;" />
+                </a>
+            </div>
+            <div class="menu-sidebar__content js-scrollbar1">
+                <nav class="navbar-sidebar">
+                    <ul class="list-unstyled navbar__list">
+                        <li>
+                            <a href="/">
+                                <i class="fas fa-tachometer-alt"></i>Home</a>
+                        </li>
+                        <li>
+                            <a href="/charts">
+                                <i class="fas fa-chart-bar"></i>Charts</a>
+                        </li>
+
+
+
+
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-copy"></i>Methods</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+
+                                <li>
+                                    <a href="/wsm">Weighted Sum</a>
+                                </li>
+                                <li>
+                                    <a href="/entropy">Entropy</a>
+                                </li>
+
+                                <li>
+                                    <a href="/topsis">Topsis</a>
+                                </li>
+                                <li>
+                                    <a href="/waspass">WASPASS</a>
+                                </li>
+                                <li>
+                                    <a href="/promethee">Promethee I</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <!-- END MENU SIDEBAR-->
+
+        <!-- PAGE CONTAINER-->
+        <div class="page-container">
+            <!-- HEADER DESKTOP-->
+            <header class="header-desktop">
+
+
+
+                 
+<div class="row">
+    <h3 class="col-lg-6" style="text-align: center; padding-top: 1%;"> Topsis Method</h3>
+
+    <div class="col-lg-6" style="text-align: right !important;">
+        
+        <img src="{% static 'tool/images/icon/IGM.png' %}" alt="" style="width: 250px;">
+    </div>
+</div>
+
+
+            </header>
+            <!-- END HEADER DESKTOP-->
+
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+            <div class="section__content section__content--p30">
+             <div class="text">  <h1> RANK 1: {{top1.Company.values.0}}</h1></div> 
+            <div class="row mt-25">
+                
+                <div class="col-sm-6 col-lg-3">
+                    <div class="overview-item overview-item--c1">
+                        <div class="overview__inner">
+                            <div class="overview-box clearfix">
+                                <div class="icon">
+                                    <i class="zmdi zmdi-account-o"></i>
+                                </div>
+                                
+                                <div class="text">
+                                    <h2>{{top1.values.0.1}}</h2>
+                                    <span>Sales ($billion)</span>
+                                </div>
+                            </div>
+                            <div class="overview-chart">
+                                <div class="chartjs-size-monitor"
+                                    style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+                                    <div class="chartjs-size-monitor-expand"
+                                        style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                        <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0">
+                                        </div>
+                                    </div>
+                                    <div class="chartjs-size-monitor-shrink"
+                                        style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                        <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+                                    </div>
+                                </div>
+                             
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="overview-item overview-item--c2">
+                        <div class="overview__inner">
+                            <div class="overview-box clearfix">
+                                <div class="icon">
+                                    <i class="zmdi zmdi-shopping-cart"></i>
+                                </div>
+                                <div class="text">
+                                    <h2>{{top1.values.0.2}}</h2>
+                                    <span>Profits ($billion)</span>
+                                </div>
+                            </div>
+                            <div class="overview-chart">
+                                <div class="chartjs-size-monitor"
+                                    style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+                                    <div class="chartjs-size-monitor-expand"
+                                        style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                        <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0">
+                                        </div>
+                                    </div>
+                                    <div class="chartjs-size-monitor-shrink"
+                                        style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                        <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="overview-item overview-item--c3">
+                        <div class="overview__inner">
+                            <div class="overview-box clearfix">
+                                <div class="icon">
+                                    <i class="zmdi zmdi-calendar-note"></i>
+                                </div>
+                                <div class="text">
+                                    <h2>{{top1.values.0.3}}</h2>
+                                    <span>Assets ($billion)</span>
+                                </div>
+                            </div>
+                            <div class="overview-chart">
+                                <div class="chartjs-size-monitor"
+                                    style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+                                    <div class="chartjs-size-monitor-expand"
+                                        style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                        <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0">
+                                        </div>
+                                    </div>
+                                    <div class="chartjs-size-monitor-shrink"
+                                        style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                        <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="overview-item overview-item--c4">
+                        <div class="overview__inner">
+                            <div class="overview-box clearfix">
+                                <div class="icon">
+                                    <i class="zmdi zmdi-money"></i>
+                                </div>
+                                <div class="text">
+                                    <h2>{{top1.values.0.4}}</h2>
+                                    <span>Market Value ($billion)</span>
+                                </div>
+                            </div>
+                            <div class="overview-chart">
+                                <div class="chartjs-size-monitor"
+                                    style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+                                    <div class="chartjs-size-monitor-expand"
+                                        style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                        <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0">
+                                        </div>
+                                    </div>
+                                    <div class="chartjs-size-monitor-shrink"
+                                        style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+                                        <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h5>Step 1 :</h5><span>Normalization : x_ij/SQRT(Sum(x_ij^2))</span>
+            <div class="table-responsive table--no-card m-b-30">
+                {%plotly_app name="wnorm" ratio=0.2 %}
+                
+            </div>
+            <h5>Step 2 :</h5><span>Vj+ =max/ Vj- =min  </span>
+            <div class="table-responsive table--no-card m-b-30">
+                {%plotly_app name="vj" ratio=0.07 %}
+                
+            </div>
+            <h5>Step 3 :</h5><span>S_i+ = SQRT(SUM(x_i-vj+)^2) / S_i-= SQRT(SUM(x_i-vj-)^2)</span>
+            <div class="table-responsive table--no-card m-b-30">
+                {%plotly_app name="step3" ratio=0.2 %}
+                {%plotly_app name="step4" ratio=0.2 %}
+                
+            </div>
+            <h5>Step 4 :</h5><span>pi= S_i-/(S_i+ +S_i-) and sort</span>
+            <div class="table-responsive table--no-card m-b-30">
+                {%plotly_app name="topsis" ratio=0.3 %}
+            </div>
+        </div>
+    </div></div>
+    </div>
+</div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="{% static 'tool/vendor/jquery-3.2.1.min.js' %}"></script>
+    <!-- Bootstrap JS-->
+    <script src="{% static 'tool/vendor/bootstrap-4.1/popper.min.js' %}"></script>
+    <script src="{% static 'tool/vendor/bootstrap-4.1/bootstrap.min.js' %}"></script>
+    <!-- Vendor JS       -->
+    <script src="{% static 'tool/vendor/slick/slick.min.js' %}">
+    </script>
+    <script src="{% static 'tool/vendor/wow/wow.min.js' %}"></script>
+    <script src="{% static 'tool/vendor/animsition/animsition.min.js' %}"></script>
+    <script src="{% static 'tool/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js' %}">
+    </script>
+    <script src="{% static 'tool/vendor/counter-up/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'tool/vendor/counter-up/jquery.counterup.min.js' %}">
+    </script>
+    <script src="{% static 'tool/vendor/circle-progress/circle-progress.min.js' %}"></script>
+    <script src="{% static 'tool/vendor/perfect-scrollbar/perfect-scrollbar.js' %}"></script>
+    <script src="{% static 'tool/vendor/chartjs/Chart.bundle.min.js' %}"></script>
+    <script src="{% static 'tool/vendor/select2/select2.min.js' %}">
+    </script>
+
+    <!-- Main JS-->
+    <script src="{% static 'tool/js/main.js' %}"></script>
+
+</body>
+
+</html>
+<!-- end document-->

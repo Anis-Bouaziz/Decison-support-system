@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+{% load static %}
+{%load plotly_dash%}
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="au theme template">
+
+    <meta name="keywords" content="au theme template">
+
+    <!-- Title Page-->
+    <title>DSS</title>
+
+    <!-- Fontfaces CSS-->
+    <link href="{% static 'tool/css/font-face.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'tool/vendor/font-awesome-4.7/css/font-awesome.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'tool/vendor/font-awesome-5/css/fontawesome-all.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'tool/vendor/mdi-font/css/material-design-iconic-font.min.css' %}" rel="stylesheet"
+        media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="{% static 'tool/vendor/bootstrap-4.1/bootstrap.min.css' %}" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="{% static 'tool/vendor/animsition/animsition.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'tool/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css' %}" rel="stylesheet"
+        media="all">
+    <link href="{% static 'tool/vendor/wow/animate.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'tool/vendor/css-hamburgers/hamburgers.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'tool/vendor/slick/slick.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'tool/vendor/select2/select2.min.css' %}" rel="stylesheet" media="all">
+    <link href="{% static 'tool/vendor/perfect-scrollbar/perfect-scrollbar.css' %}" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="{% static 'tool/css/theme.css' %}" rel="stylesheet" media="all">
+
+</head>
+
+<body class="animsition">
+    <div class="page-wrapper">
+        <!-- HEADER MOBILE-->
+        <header class="header-mobile d-block d-lg-none">
+            <div class="header-mobile__bar">
+                <div class="container-fluid">
+                    <div class="header-mobile-inner">
+                        <a class="logo" href="/">
+                            <img src="{% static 'tool/images/icon/logo.png' %}" alt="DSS" />
+                        </a>
+                        <button class="hamburger hamburger--slider" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar-mobile">
+                <div class="container-fluid">
+                    <ul class="navbar-mobile__list list-unstyled">
+                        <li>
+                            <a href="/">
+                                <i class="fas fa-chart-bar"></i>Home</a>
+                        </li>
+                        <li>
+                            <a href="/charts">
+                                <i class="fas fa-chart-bar"></i>Charts</a>
+                        </li>
+
+
+
+
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-copy"></i>Methods</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                <li>
+                                    <a href="/AHP">AHP</a>
+                                </li>
+                                <li>
+                                    <a href="register.html">Weighted Sum</a>
+                                </li>
+                                <li>
+                                    <a href="forget-pass.html">Topsis</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- END HEADER MOBILE-->
+
+        <!-- MENU SIDEBAR-->
+        <aside class="menu-sidebar d-none d-lg-block">
+            <div class="logo">
+                <a href="#">
+                    <img src="{% static 'tool/images/icon/post.jpg' %}" alt="post"  />
+                </a>
+            </div>
+            <div class="menu-sidebar__content js-scrollbar1">
+                <nav class="navbar-sidebar">
+                    <ul class="list-unstyled navbar__list">
+                        <li>
+                            <a href="/">
+                                <i class="fas fa-tachometer-alt"></i>Home</a>
+                        </li>
+                        <li>
+                            <a href="/charts">
+                                <i class="fas fa-chart-bar"></i>Charts</a>
+                        </li>
+
+
+
+
+                        <li class="has-sub">
+                            <a class="js-arrow" href="#">
+                                <i class="fas fa-copy"></i>Methods</a>
+                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                
+                                <li>
+                                    <a href="/wsm">Weighted Sum</a>
+                                </li>
+                                <li>
+                                    <a href="/entropy">Entropy</a>
+                                </li>
+
+                                <li>
+                                    <a href="/topsis">Topsis</a>
+                                </li>
+                                <li>
+                                    <a href="/waspass">WASPASS</a>
+                                </li>
+                                <li>
+                                    <a href="/promethee">Promethee I</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <!-- END MENU SIDEBAR-->
+
+        <!-- PAGE CONTAINER-->
+        <div class="page-container">
+            <!-- HEADER DESKTOP-->
+            <header class="header-desktop">
+
+
+
+                
+<div class="row">
+    <h3 class="col-lg-6" style="text-align: center; padding-top: 1%;"> Decision Support System</h3>
+
+    <div class="col-lg-6" style="text-align: right !important;">
+        
+        <img src="{% static 'tool/images/icon/IGM.png' %}" alt="" style="width: 250px;">
+    </div>
+</div>
+
+
+            </header>
+            <!-- END HEADER DESKTOP-->
+
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <h3>Dataset: Largest Companies in the World</h3>
+                        <p> The goal here is to determine which is the biggest company in the world ,
+                            based on several criteria such as the sales , profits ,assets , market value.</p>
+                        <div class="row">
+
+                            <div class="col-lg-9">
+                                <div class="table-responsive table--no-card m-b-30">
+
+
+                                    {%plotly_app name="SimpleExample" ratio=0.6 %}
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <div class="au-card au-card--bg-blue au-card-top-countries m-b-30">
+                                    <div class="au-card-inner">
+                                        <div class="table-responsive">
+                                            <h5 class="text-white title-3 m-b-30">Top Countries by Market Value
+                                                ($billion)</h5>
+                                            <table class="table table-top-countries">
+
+                                                <tbody>
+                                                    {% for k,v in topCountries.items %}
+                                                    <tr>
+                                                        <td>{{k}}</td>
+                                                        <td class="text-right">${{v}}</td>
+                                                    </tr>
+                                                    {% endfor%}
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <!-- USER DATA-->
+                                <div class="top-campaign">
+                                    <h3 class="title-3 m-b-30">top companies by Sales ($billion)</h3>
+                                    <div class="table-responsive">
+                                        <table class="table table-top-campaign">
+                                            <tbody>
+                                                {% for k,v in topsales.items %}
+                                                <tr>
+                                                    <td>{{k}}</td>
+                                                    <td>${{v}}</td>
+                                                </tr>
+                                                {% endfor%}
+
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- END USER DATA-->
+                                </div>
+                            </div>
+                            <div class="col">
+                                <!-- USER DATA-->
+                                <div class="top-campaign">
+                                    <h3 class="title-3 m-b-30">top companies by Market Value ($billion)</h3>
+                                    <div class="table-responsive">
+                                        <table class="table table-top-campaign">
+                                            <tbody>
+                                                {% for k,v in topmarket.items %}
+                                                <tr>
+                                                    <td>{{k}}</td>
+                                                    <td>${{v}}</td>
+                                                </tr>
+                                                {% endfor%}
+
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <!-- END USER DATA-->
+                                </div>
+                            </div>
+                            <div class="col ">
+                                <!-- TOP CAMPAIGN-->
+                                <div class="top-campaign">
+                                    <h3 class="title-3 m-b-30">top companies by Profits ($billion)</h3>
+                                    <div class="table-responsive">
+                                        <table class="table table-top-campaign">
+                                            <tbody>
+                                                {% for k,v in topprofits.items %}
+                                                <tr>
+                                                    <td>{{k}}</td>
+                                                    <td>${{v}}</td>
+                                                </tr>
+                                                {% endfor%}
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!--  END TOP CAMPAIGN-->
+                            </div>
+                            <div class="col">
+                                <!-- TOP CAMPAIGN-->
+                                <div class="top-campaign">
+                                    <h3 class="title-3 m-b-30">top companies by Assets ($billion)</h3>
+                                    <div class="table-responsive">
+                                        <table class="table table-top-campaign">
+                                            <tbody>
+                                                {% for k,v in topassets.items %}
+                                                <tr>
+                                                    <td>{{k}}</td>
+                                                    <td>${{v}}</td>
+                                                </tr>
+                                                {% endfor%}
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!--  END TOP CAMPAIGN-->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="copyright">
+                            <p>Copyright © 2021 Mohamed Anis Bouaziz.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="{% static 'tool/vendor/jquery-3.2.1.min.js' %}"></script>
+    <!-- Bootstrap JS-->
+    <script src="{% static 'tool/vendor/bootstrap-4.1/popper.min.js' %}"></script>
+    <script src="{% static 'tool/vendor/bootstrap-4.1/bootstrap.min.js' %}"></script>
+    <!-- Vendor JS       -->
+    <script src="{% static 'tool/vendor/slick/slick.min.js' %}">
+    </script>
+    <script src="{% static 'tool/vendor/wow/wow.min.js' %}"></script>
+    <script src="{% static 'tool/vendor/animsition/animsition.min.js' %}"></script>
+    <script src="{% static 'tool/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js' %}">
+    </script>
+    <script src="{% static 'tool/vendor/counter-up/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'tool/vendor/counter-up/jquery.counterup.min.js' %}">
+    </script>
+    <script src="{% static 'tool/vendor/circle-progress/circle-progress.min.js' %}"></script>
+    <script src="{% static 'tool/vendor/perfect-scrollbar/perfect-scrollbar.js' %}"></script>
+    <script src="{% static 'tool/vendor/chartjs/Chart.bundle.min.js' %}"></script>
+    <script src="{% static 'tool/vendor/select2/select2.min.js' %}">
+    </script>
+
+    <!-- Main JS-->
+    <script src="{% static 'tool/js/main.js' %}"></script>
+
+</body>
+
+</html>
+<!-- end document-->
