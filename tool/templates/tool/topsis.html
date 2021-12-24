@@ -296,7 +296,7 @@
             </div>
             <h5>Step 1 :</h5><span>Normalization : x_ij/SQRT(Sum(x_ij^2))</span>
             <div class="table-responsive table--no-card m-b-30">
-                {%plotly_app name="wnorm" ratio=0.2 %}
+                {%plotly_app name="top_norm" ratio=0.2 %}
                 
             </div>
             <h5>Step 2 :</h5><span>Vj+ =max/ Vj- =min  </span>
@@ -306,8 +306,8 @@
             </div>
             <h5>Step 3 :</h5><span>S_i+ = SQRT(SUM(x_i-vj+)^2) / S_i-= SQRT(SUM(x_i-vj-)^2)</span>
             <div class="table-responsive table--no-card m-b-30">
-                {%plotly_app name="step3" ratio=0.2 %}
-                {%plotly_app name="step4" ratio=0.2 %}
+                {%plotly_app name="top_step3" ratio=0.2 %}
+                {%plotly_app name="top_step4" ratio=0.2 %}
                 
             </div>
             <h5>Step 4 :</h5><span>pi= S_i-/(S_i+ +S_i-) and sort</span>

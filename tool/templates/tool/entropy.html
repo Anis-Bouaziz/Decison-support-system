@@ -296,12 +296,12 @@
             </div>
             <h5>Step 1 :</h5><span>Normalization </span>
             <div class="table-responsive table--no-card m-b-30">
-                {%plotly_app name="wnorm" ratio=0.2 %}
+                {%plotly_app name="ent_norm" ratio=0.2 %}
                 
             </div>
             <h5>Step 2 :</h5><span>p_ij*ln(p_ij) </span>
             <div class="table-responsive table--no-card m-b-30">
-                {%plotly_app name="step3" ratio=0.2 %}
+                {%plotly_app name="ent_step3" ratio=0.2 %}
                 
             </div>
             <h5>Step 3 :</h5><span>Entropy: e_j = -k*p_ij*ln(p_ij) k=1/ln(num_cols) </span>
