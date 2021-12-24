@@ -14,6 +14,17 @@ from tool.methods.topsis import topsis
 df = pd.read_csv('tool/data/data.csv')
 df.drop(['Global Rank', 'Continent', 'Latitude',
         'Longitude', 'Country'], axis=1, inplace=True)
+
+wsm1, wsmn = WSM.wsm(df)
+top_wsm = df[df['Company'] == wsm1[:1]['Company'].values[0]]
+ent, ent_norm, ent_step3, e1, e2, e3 = entropy(df)
+top_ent = df[df['Company'] == ent[:1]['Company'].values[0]]
+top, top_norm, top_step2, top_step3, top_step4 = topsis(df)
+top_topsis = df[df['Company'] == top[:1]['Company'].values[0]]
+was, was_norm = waspass(df)
+top_was = df[df['Company'] == was[:1]['Company'].values[0]]
+prom, prom_norm, phi = promethee(df)
+top_prom = df[df['Company'] == prom[:1]['Company'].values[0]]
 ######################################################
 app1 = DjangoDash('SimpleExample', external_stylesheets=[
                      dbc.themes.BOOTSTRAP])
@@ -34,11 +45,11 @@ app1.layout = dash_table.DataTable(
 )
 
 ##############################################################################################################
-wsm_plot = df[df['Company'].isin(WSM.wsm(df)[0]['Company'].head(3).values)]
-entropy_plot = df[df['Company'].isin(entropy(df)[0]['Company'].head(3).values)]
-topsis_plot = df[df['Company'].isin(topsis(df)[0]['Company'].head(3).values)]
-waspass_plot = df[df['Company'].isin(waspass(df)[0]['Company'].head(3).values)]
-promethee_plot = df[df['Company'].isin(promethee(df)[0]['Company'].head(3).values)]
+wsm_plot = df[df['Company'].isin(wsm1['Company'].head(3).values)]
+entropy_plot = df[df['Company'].isin(ent['Company'].head(3).values)]
+topsis_plot = df[df['Company'].isin(top['Company'].head(3).values)]
+waspass_plot = df[df['Company'].isin(was['Company'].head(3).values)]
+promethee_plot = df[df['Company'].isin(prom['Company'].head(3).values)]
 fig1 = px.bar(wsm_plot, x='Company', y=df.columns,
                 barmode="group", template='plotly_dark')
 fig2 = px.bar(entropy_plot, x='Company', y=df.columns,
@@ -115,7 +126,7 @@ app6.layout = html.Div(children=[
     )
 ])
 ########################################################################
-wsm1, wsmn = WSM.wsm(df)
+
 app7 = DjangoDash('wsm1', external_stylesheets=[dbc.themes.BOOTSTRAP])
 app7.layout = dash_table.DataTable(
     id='wsm1',
@@ -149,7 +160,7 @@ app8.layout = dash_table.DataTable(
     page_size=10
 )
 #########################################################################
-ent, ent_norm, ent_step3, e1, e2, e3 = entropy(df)
+
 app9 = DjangoDash('entropy', external_stylesheets=[dbc.themes.BOOTSTRAP])
 app9.layout = dash_table.DataTable(
     id='entropy',
@@ -253,7 +264,7 @@ app14.layout = dash_table.DataTable(
     }
 )
     #############################
-top, top_norm, top_step2, top_step3, top_step4 = topsis(df)
+
 app15 = DjangoDash('topsis', external_stylesheets=[dbc.themes.BOOTSTRAP])
 app15.layout = dash_table.DataTable(
     id='topsis',
@@ -342,7 +353,6 @@ app19.layout = dash_table.DataTable(
     page_size=5
 )
 #############################################################
-was, was_norm = waspass(df)
 app20 = DjangoDash('waspass', external_stylesheets=[dbc.themes.BOOTSTRAP])
 app20.layout = dash_table.DataTable(
     id='waspass',
@@ -378,7 +388,6 @@ app21.layout = dash_table.DataTable(
 )
 #############################################################
 
-prom, prom_norm, phi = promethee(df)
 app22 = DjangoDash('promethee', external_stylesheets=[dbc.themes.BOOTSTRAP])
 app22.layout = dash_table.DataTable(
     id='promethee',
