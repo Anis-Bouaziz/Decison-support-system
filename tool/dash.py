@@ -143,22 +143,22 @@ app7.layout = dash_table.DataTable(
     },
     page_size=10
 )
-app8 = DjangoDash('wsm_norm', external_stylesheets=[dbc.themes.BOOTSTRAP])
-app8.layout = dash_table.DataTable(
-    id='wsm_norm',
-    columns=[{"name": i, "id": i} for i in wsmn.columns],
-    data=wsmn.to_dict('records'),
+# app8 = DjangoDash('wsm_norm', external_stylesheets=[dbc.themes.BOOTSTRAP])
+# app8.layout = dash_table.DataTable(
+#     id='wsm_norm',
+#     columns=[{"name": i, "id": i} for i in wsmn.columns],
+#     data=wsmn.to_dict('records'),
 
-    style_header={
-        'backgroundColor': 'rgb(30, 30, 30)',
-        'color': 'white'
-    },
-    style_data={
-        'backgroundColor': '#4272d7',
-        'color': 'white'
-    },
-    page_size=10
-)
+#     style_header={
+#         'backgroundColor': 'rgb(30, 30, 30)',
+#         'color': 'white'
+#     },
+#     style_data={
+#         'backgroundColor': '#4272d7',
+#         'color': 'white'
+#     },
+#     page_size=10
+# )
 #########################################################################
 
 app9 = DjangoDash('entropy', external_stylesheets=[dbc.themes.BOOTSTRAP])
@@ -178,22 +178,22 @@ app9.layout = dash_table.DataTable(
     page_size=10
 )
 ####################################################
-app10 = DjangoDash('ent_norm', external_stylesheets=[dbc.themes.BOOTSTRAP])
-app10.layout = dash_table.DataTable(
-    id='ent_norm',
-    columns=[{"name": i, "id": i} for i in ent_norm.columns],
-    data=ent_norm.to_dict('records'),
+# app10 = DjangoDash('ent_norm', external_stylesheets=[dbc.themes.BOOTSTRAP])
+# app10.layout = dash_table.DataTable(
+#     id='ent_norm',
+#     columns=[{"name": i, "id": i} for i in ent_norm.columns],
+#     data=ent_norm.to_dict('records'),
 
-    style_header={
-        'backgroundColor': 'rgb(30, 30, 30)',
-        'color': 'white'
-    },
-    style_data={
-        'backgroundColor': '#4272d7',
-        'color': 'white'
-    },
-    page_size=10
-)
+#     style_header={
+#         'backgroundColor': 'rgb(30, 30, 30)',
+#         'color': 'white'
+#     },
+#     style_data={
+#         'backgroundColor': '#4272d7',
+#         'color': 'white'
+#     },
+#     page_size=10
+# )
 #############################
 ####################################################
 app11 = DjangoDash('ent_step3', external_stylesheets=[dbc.themes.BOOTSTRAP])
@@ -282,22 +282,22 @@ app15.layout = dash_table.DataTable(
     page_size=10
 )
 ##########################################################
-app16 = DjangoDash('top_norm', external_stylesheets=[dbc.themes.BOOTSTRAP])
-app16.layout = dash_table.DataTable(
-    id='top_norm',
-    columns=[{"name": i, "id": i} for i in top_norm.columns],
-    data=top_norm.to_dict('records'),
+# app16 = DjangoDash('top_norm', external_stylesheets=[dbc.themes.BOOTSTRAP])
+# app16.layout = dash_table.DataTable(
+#     id='top_norm',
+#     columns=[{"name": i, "id": i} for i in top_norm.columns],
+#     data=top_norm.to_dict('records'),
 
-    style_header={
-        'backgroundColor': 'rgb(30, 30, 30)',
-        'color': 'white'
-    },
-    style_data={
-        'backgroundColor': '#4272d7',
-        'color': 'white'
-    },
-    page_size=10
-)
+#     style_header={
+#         'backgroundColor': 'rgb(30, 30, 30)',
+#         'color': 'white'
+#     },
+#     style_data={
+#         'backgroundColor': '#4272d7',
+#         'color': 'white'
+#     },
+#     page_size=10
+# )
 #############################################################
 ##########################################################
 app17 = DjangoDash('vj', external_stylesheets=[dbc.themes.BOOTSTRAP])
@@ -370,22 +370,22 @@ app20.layout = dash_table.DataTable(
     page_size=20
 )
 ##########################################################
-app21 = DjangoDash('was_norm', external_stylesheets=[dbc.themes.BOOTSTRAP])
-app21.layout = dash_table.DataTable(
-    id='was_norm',
-    columns=[{"name": i, "id": i} for i in was_norm.columns],
-    data=was_norm.to_dict('records'),
+# app21 = DjangoDash('was_norm', external_stylesheets=[dbc.themes.BOOTSTRAP])
+# app21.layout = dash_table.DataTable(
+#     id='was_norm',
+#     columns=[{"name": i, "id": i} for i in was_norm.columns],
+#     data=was_norm.to_dict('records'),
 
-    style_header={
-        'backgroundColor': 'rgb(30, 30, 30)',
-        'color': 'white'
-    },
-    style_data={
-        'backgroundColor': '#4272d7',
-        'color': 'white'
-    },
-    page_size=10
-)
+#     style_header={
+#         'backgroundColor': 'rgb(30, 30, 30)',
+#         'color': 'white'
+#     },
+#     style_data={
+#         'backgroundColor': '#4272d7',
+#         'color': 'white'
+#     },
+#     page_size=10
+# )
 #############################################################
 
 app22 = DjangoDash('promethee', external_stylesheets=[dbc.themes.BOOTSTRAP])
@@ -405,22 +405,22 @@ app22.layout = dash_table.DataTable(
     page_size=20
 )
 ##########################################################
-app23 = DjangoDash('prom_norm', external_stylesheets=[dbc.themes.BOOTSTRAP])
-app23.layout = dash_table.DataTable(
-    id='prom_norm',
-    columns=[{"name": i, "id": i} for i in prom_norm.columns],
-    data=prom_norm.to_dict('records'),
+# app23 = DjangoDash('prom_norm', external_stylesheets=[dbc.themes.BOOTSTRAP])
+# app23.layout = dash_table.DataTable(
+#     id='prom_norm',
+#     columns=[{"name": i, "id": i} for i in prom_norm.columns],
+#     data=prom_norm.to_dict('records'),
 
-    style_header={
-        'backgroundColor': 'rgb(30, 30, 30)',
-        'color': 'white'
-    },
-    style_data={
-        'backgroundColor': '#4272d7',
-        'color': 'white'
-    },
-    page_size=10
-) 
+#     style_header={
+#         'backgroundColor': 'rgb(30, 30, 30)',
+#         'color': 'white'
+#     },
+#     style_data={
+#         'backgroundColor': '#4272d7',
+#         'color': 'white'
+#     },
+#     page_size=10
+# ) 
 #############################################################
 ##########################################################
 app24 = DjangoDash('phi', external_stylesheets=[dbc.themes.BOOTSTRAP])

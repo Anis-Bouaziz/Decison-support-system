@@ -17,4 +17,4 @@ def promethee(df):
     normdf2.apply(lambda row : scores(row,df2,phi),axis=1)
     df2['phi+']=phi.sum(axis=1)
     df2['-phi-']=phi.sum(axis=0)*-1
-    return df2.reset_index().sort_values(['phi+','-phi-'],ascending=False),normdf2,phi.iloc[:5,-5:]
+    return df2.reset_index().sort_values(['phi+','-phi-'],ascending=False),normdf2.head(10),phi.iloc[:5,-5:]
