@@ -115,7 +115,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+SECRET_KEY = 'django-insecure-@8*hsmcc2p(0t(6%(u+2ml(nj4ksjiwbanqt!#dcybrqn5tq2='
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
