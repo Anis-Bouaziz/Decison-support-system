@@ -14,7 +14,7 @@ def promethee(df):
     min1=df2.min(axis=0)
     normdf2=(df2-min1)/(max1-min1)
     phi=pd.DataFrame(columns=df2.index,index=df2.index.values)
-    normdf2.apply(lambda row : scores(row,df2,phi),axis=1)
+    normdf2.apply(lambda row : scores(row,normdf2,phi),axis=1)
     df2['phi+']=phi.sum(axis=1)
     df2['-phi-']=phi.sum(axis=0)*-1
     return df2.reset_index().sort_values(['phi+','-phi-'],ascending=False),normdf2.head(10),phi.iloc[:5,-5:]
